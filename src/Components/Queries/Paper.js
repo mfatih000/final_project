@@ -9,11 +9,11 @@ const Paper = () => {
   return (
     <main className="paper">
       <h2 className="mb-2 mt-3 whitespace-break-spaces text-4xl font-bold text-violet-950 underline decoration-inherit decoration-2 underline-offset-4 dark:mt-0 dark:text-slate-400 md:text-6xl">
-        Papers
+        Ders Notları
       </h2>
       {paperList.length ? (
         <section className="pt-4 lg:columns-2">
-          {paperList.map((paper, index) => (
+          {paperList.slice(0,4).map((paper, index) => (
             <Link to={paper.paper} key={index} onClick={() => setPaper(paper)}>
               <article className="mb-4 flex items-center whitespace-break-spaces rounded-md  bg-violet-300 p-2 hover:bg-violet-400 duration-200 dark:bg-slate-950/80 dark:hover:bg-slate-950/50 dark:hover:text-slate-300 lg:p-4 ">
                 <AiFillBook className="text-[3rem] lg:text-[4rem]" />
@@ -23,7 +23,7 @@ const Paper = () => {
                   </h3>
                   <hr className="border border-violet-500 dark:border-slate-400" />
                   <p className="px-2 text-sm font-medium lg:text-base ">
-                    {paper.year}
+                    {parseInt(paper.year)+parseInt(1)}
                   </p>
                 </div>
               </article>

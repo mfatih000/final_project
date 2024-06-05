@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { GiBookshelf } from "react-icons/gi";
-import { IoCalendarOutline } from "react-icons/io5";
-import { HiOutlineDocumentReport } from "react-icons/hi";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { BiBookAdd } from "react-icons/bi";
 import { RiUserAddLine } from "react-icons/ri";
@@ -24,57 +22,31 @@ const Dash = () => {
   return (
     <main className="self-center">
       <h2 className="m-6 font-spectral mx-auto text-center text-6xl font-bold dark:text-slate-400">
-        Kollege
+        StudyStor
       </h2>
       <div className="grid grid-cols-1 place-content-center gap-3 px-1 py-4 lg:grid-cols-2 lg:gap-4 lg:px-8 xl:grid-cols-3">
         <Link
-          className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
+          className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
           to={"./paper"}
         >
           <GiBookshelf className="text-[2.5rem] lg:text-[4rem] " />
           <div className="font-semibold">
-            Papers
+            Ders Notları
             <p className="text-sm font-normal lg:text-base ">
-              View Papers and Notes
+              Dökümanlarınıza Ve Notlarınıza Ulaşın
             </p>
           </div>
         </Link>
 
         <Link
-          className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
-          to={"./attendance"}
-        >
-          <IoCalendarOutline className="text-[2.5rem] lg:text-[4rem] " />
-          <div className="font-semibold">
-            Attendance
-            <p className="text-sm font-normal lg:text-base ">
-              Add or Edit Attendance
-            </p>
-          </div>
-        </Link>
-
-        <Link
-          className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
-          to={"./internal"}
-        >
-          <HiOutlineDocumentReport className="text-[2.5rem] lg:text-[4rem] " />
-          <div className="font-semibold">
-            Internal Mark
-            <p className="text-sm font-normal lg:text-base ">
-              View or Edit Internal Marks
-            </p>
-          </div>
-        </Link>
-
-        <Link
-          className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
+          className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
           to={"./time_schedule"}
         >
           <AiOutlineSchedule className="text-[2.5rem] lg:text-[4rem] " />
           <div className="font-semibold">
-            Time Schedule
+            Takvim
             <p className="text-sm font-normal lg:text-base ">
-              View or Edit Time Schedule
+              Zamanınızı Planlayın
             </p>
           </div>
         </Link>
@@ -82,7 +54,7 @@ const Dash = () => {
         {user.role === "HOD" && (
           <>
             <Link
-              className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
+              className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
               to={"./add_paper"}
             >
               <BiBookAdd className="text-[2.5rem] lg:text-[4rem] " />
@@ -95,7 +67,7 @@ const Dash = () => {
             </Link>
 
             <Link
-              className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
+              className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
               to={"./approve_staff"}
             >
               <RiUserAddLine className="text-[2.5rem] lg:text-[4rem] " />
@@ -110,20 +82,20 @@ const Dash = () => {
         )}
         {user.role === "student" && (
           <Link
-            className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
+            className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
             to={"./join_paper"}
           >
             <PiBooks className="text-[2.5rem] lg:text-[4rem] " />
             <div className="font-semibold">
-              Manage Paper
+              Döküman Yönetimi
               <p className="text-sm font-normal lg:text-base ">
-                Join or Leave Paper
+                Bir Derse Katılın Veya Dersten Ayrılın
               </p>
             </div>
           </Link>
         )}
         <Link
-          className="flex gap-2 rounded-lg bg-violet-300 p-6 text-base hover:bg-violet-400/90 dark:bg-violet-950/80 dark:hover:bg-violet-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
+          className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
           to={"./profile"}
         >
           {user.role === "student" ? (
@@ -132,9 +104,9 @@ const Dash = () => {
             <PiUser className="text-[2.5rem] lg:text-[4rem] " />
           )}
           <div className="font-semibold">
-            Profile
+            Profil
             <p className="text-sm font-normal lg:text-base ">
-              View or Edit Profile
+              Profil Bilgilerinizi Görüntüleyin
             </p>
           </div>
         </Link>

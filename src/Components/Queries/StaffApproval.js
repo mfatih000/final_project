@@ -60,7 +60,7 @@ const StaffApproval = () => {
       {user.role === "HOD" ? (
         <main className="staff__approval">
           <h2 className="mb-2 mt-3 whitespace-break-spaces text-4xl font-bold text-violet-950 underline decoration-inherit decoration-2 underline-offset-4 dark:mt-0 dark:text-slate-400 md:text-6xl">
-            Approve Staff
+            Personel Onayı
           </h2>
           <h3 className="text-2xl font-semibold">
             Department: {user.department}

@@ -72,8 +72,7 @@ const JoinPaper = () => {
       {user.role === "student" ? (
         <main>
           <h2 className="mb-2 mt-3 whitespace-break-spaces text-4xl font-bold text-violet-950 underline decoration-inherit decoration-2 underline-offset-4 dark:mt-0 dark:text-slate-400 md:text-6xl">
-            Manage Paper
-          </h2>
+Döküman Yönetimi          </h2>
           <form>
             {papers.length ? (
               <>
@@ -83,16 +82,16 @@ const JoinPaper = () => {
                       AdditionalRowClasses={"rounded-t-xl text-left"}
                       AdditionalHeaderClasses={'last:text-center'}
                       Headers={[
-                        "Paper",
-                        "Department",
-                        "Year",
-                        "Semester",
-                        "Teacher",
-                        "Manage",
+                        "Ders",
+                        "Alan",
+                        "Yıl",
+                        "Dönem",
+                        "Öğretim Görevlisi",
+                        "",
                       ]}
                     />
                     <tbody>
-                      {papers?.map((paper, index) => (
+                      {papers?.slice(0, 5).map((paper, index) => (
                         <tr key={index}>
                           <td className="border-t-[1px] border-violet-400 dark:border-slate-400 px-4 py-2">
                             {paper.paper}
