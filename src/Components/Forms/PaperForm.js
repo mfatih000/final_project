@@ -52,10 +52,10 @@ const PaperForm = () => {
       {user.role === "HOD" ? (
         <main className="paper">
           <h2 className="mb-2 mt-3 whitespace-break-spaces text-4xl font-bold text-violet-950 underline decoration-inherit decoration-2 underline-offset-4 dark:mt-0 dark:text-slate-400 md:text-6xl">
-            Add Paper
+            Döküman Ekle
           </h2>
           <form className="w-full md:w-1/3">
-            <label htmlFor="department">Department:</label>
+            <label htmlFor="department">Bölüm:</label>
             <input
               className="mb-4 block h-10 w-full rounded-md border-[1.5px] border-solid border-slate-400 p-1 pl-2 outline-none selection:border-slate-200 focus:border-violet-900 dark:border-slate-200 dark:caret-inherit dark:focus:border-violet-400 dark:active:border-violet-400"
               name="department"
@@ -65,7 +65,7 @@ const PaperForm = () => {
               value={newPaper.department}
               disabled
             />
-            <label htmlFor="paper">Paper:</label>
+            <label htmlFor="paper">Döküman:</label>
             <input
               className="mb-4 block h-10 w-full rounded-md border-[1.5px] border-solid border-slate-400 p-1 pl-2 outline-none selection:border-slate-200 focus:border-violet-900 dark:border-slate-200 dark:caret-inherit dark:focus:border-violet-400 dark:active:border-violet-400"
               type="text"
@@ -75,7 +75,7 @@ const PaperForm = () => {
               required
               onChange={(e) => handleFormChange(e)}
             />
-            <label htmlFor="semester">Semester:</label>
+            <label htmlFor="semester">Dönem:</label>
             <select
               className="mb-4 block h-10 w-full rounded-md border-[1.5px] border-solid border-slate-400 p-1 pl-2 outline-none selection:border-slate-200 focus:border-violet-900 dark:border-slate-200 dark:caret-inherit dark:focus:border-violet-400 dark:active:border-violet-400"
               id="semester"
@@ -84,7 +84,7 @@ const PaperForm = () => {
               onChange={(e) => handleFormChange(e)}
             >
               <option defaultValue hidden>
-                Select Semester
+                Dönem Seçin
               </option>
               <option value="I">I</option>
               <option value="II">II</option>
@@ -93,7 +93,7 @@ const PaperForm = () => {
               <option value="V">V</option>
               <option value="VI">VI</option>
             </select>
-            <label htmlFor="year">Year:</label>
+            <label htmlFor="year">Yıl:</label>
             <input
               className="mb-4 block h-10 w-full rounded-md border-[1.5px] border-solid border-slate-400 p-1 pl-2 outline-none selection:border-slate-200 focus:border-violet-900 dark:border-slate-200 dark:caret-inherit dark:focus:border-violet-400 dark:active:border-violet-400"
               type="number"
@@ -105,7 +105,7 @@ const PaperForm = () => {
               value={newPaper.year}
               onChange={(e) => handleFormChange(e)}
             />
-            <label htmlFor="teacher">Teacher:</label>
+            <label htmlFor="teacher">Öğretim Görevlisi:</label>
             <select
               className="mb-4 block h-10 w-full rounded-md border-[1.5px] border-solid border-slate-400 p-1 pl-2 outline-none selection:border-slate-200 focus:border-violet-900 dark:border-slate-200 dark:caret-inherit dark:focus:border-violet-400 dark:active:border-violet-400"
               required
@@ -115,9 +115,9 @@ const PaperForm = () => {
               onChange={(e) => handleFormChange(e)}
             >
               <option defaultValue hidden>
-                Select Teacher
+              Öğretim Görevlisi Seçin
               </option>
-              {teachers?.map((teacher) => (
+              {teachers?.slice(0,3).map((teacher) => (
                 <option key={teacher._id} value={teacher._id}>
                   {teacher.name}
                 </option>
@@ -129,7 +129,7 @@ const PaperForm = () => {
               onClick={(e) => addPaper(e)}
             >
               <FaPlus />
-              Add
+              Ekle
             </button>
           </form>
           {error ? <ErrorStrip error={error} /> : ""}

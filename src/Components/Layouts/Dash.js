@@ -59,14 +59,14 @@ const Dash = () => {
             >
               <BiBookAdd className="text-[2.5rem] lg:text-[4rem] " />
               <div className="font-semibold">
-                Add Paper
+                Döküman Ekle
                 <p className="text-sm font-normal lg:text-base ">
-                  Add a New Paper
+                  Yeni Bir Döküman Ekleyin
                 </p>
               </div>
             </Link>
 
-            <Link
+            {/* <Link
               className="flex gap-2 rounded-lg bg-blue-300 p-6 text-base hover:bg-blue-400/90 dark:bg-blue-950/80 dark:hover:bg-blue-950 dark:hover:text-slate-300 duration-200 lg:text-lg"
               to={"./approve_staff"}
             >
@@ -77,7 +77,7 @@ const Dash = () => {
                   Approve registered staff(s)
                 </p>
               </div>
-            </Link>
+            </Link> */}
           </>
         )}
         {user.role === "student" && (

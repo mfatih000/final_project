@@ -130,7 +130,7 @@ const TimeScheduleForm = () => {
                             onChange={(e) => handleFormChange(e)}
                           >
                             <option defaultValue>--</option>
-                            {paperList?.map((paper) => (
+                            {paperList?.slice(0,3).map((paper) => (
                               <option key={paper._id} value={paper.name}>
                                 {paper.paper}
                               </option>
